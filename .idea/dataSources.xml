@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="1241018433">
+    <data-source source="LOCAL" name="SQL Server - OSS@localhost" uuid="576d36f2-c205-4f75-91b0-8c8c4081ef0d">
+      <driver-ref>sqlserver.ms</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.microsoft.sqlserver.jdbc.SQLServerDriver</jdbc-driver>
+      <jdbc-url>jdbc:sqlserver://localhost:1433;databaseName=OSS</jdbc-url>
+      <user-name>sa</user-name>
+      <user-password>dfd9dfc2dfc3dfc4dfc5dfdd</user-password>
+      <schema-pattern>OSS.*</schema-pattern>
+      <default-schemas>OSS.*</default-schemas>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="Oracle - orcl@localhost" uuid="ad170a99-3bd0-4b1d-8975-15e574f9f544">
+      <driver-ref>oracle</driver-ref>
+      <jdbc-driver>oracle.jdbc.OracleDriver</jdbc-driver>
+      <jdbc-url>jdbc:oracle:thin:@//localhost:1521/orcl</jdbc-url>
+      <user-name>shinow</user-name>
+      <user-password>dfd9dfc2dfc3dfc4dfc5dfdd</user-password>
+      <schema-pattern>*.SHINOW</schema-pattern>
+      <default-schemas>*.SHINOW</default-schemas>
+      <libraries />
+    </data-source>
+  </component>
+</project>
+

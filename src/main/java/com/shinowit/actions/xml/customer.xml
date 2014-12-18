@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+    <constant name="struts.i18n.reload" value="false"/>
+    <constant name="struts.devMode" value="true"/>
+    <constant name="struts.custom.i18n.resources" value="globalMessages"/>
+
+    <package name="customer" extends="struts-default,json-default" namespace="/">
+
+        <action name="customer" class="com.shinowit.actions.customer.CustomerAction" method="queryCustomer">
+            <result type="json">
+                <param name="includeProperties">cuslist.*</param>
+                <param name="excludeProperties">
+                    .*hibernateLazyInitializer,.*handler,.*baSupplyRecordInfos,.*meOrderInfos,.*baMemberInfo
+                </param>
+            </result>
+        </action>
+        <action name="addCus" class="com.shinowit.actions.customer.AddCustomerAction" method="addCustomer">
+            <result type="json"></result>
+        </action>
+    </package>
+
+
+</struts>

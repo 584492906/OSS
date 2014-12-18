@@ -1,0 +1,114 @@
+{
+    root: [
+        {
+            name: '采购管理',
+            child: [
+                {
+                    src: 'img/ruku.ico',
+                    title: '采购进货',
+                    remark: '对人员进行信息的管理',
+                    tag: 'input',
+                    module: 'js.inStock'
+                },
+                {
+                    src: 'img/dingdancx.ico',
+                    title: '订单查询',
+                    remark: '测试页面',
+                    tag: 'SheDiao',
+                    module: 'js.inStockInfo'
+                }
+            ]
+        },
+        {
+            name: '销售管理',
+            child: [
+                {
+                    src: 'img/xiaoshou.ico',
+                    title: '销售单据',
+                    remark: 'Hello',
+                    tag: 'testTree',
+                    module: 'js.outstockinfo'
+                },
+                {
+                    src: 'img/chukuguanli.ico',
+                    title: '出库管理',
+                    remark: 'Hello',
+                    tag: 'testTree',
+                    module: 'js.outStock'
+                }
+            ]
+        },
+        {
+            name: '仓库管理',
+            child: [
+                {
+                    src: 'img/rukuguanli.ico',
+                    title: '盘点库存',
+                    remark: 'Hello',
+                    tag: 'testTree',
+                    module: 'js.stockinfo'
+                }
+            ]
+        },
+        {
+            name: '人员管理',
+            child: [
+                {
+                    src: 'img/1.jpg',
+                    title: '权限管理',
+                    remark: 'Hello',
+                    tag: 'testTree',
+                    module: 'ShiNow.work.testTree'
+                }
+            ]
+        },
+        {
+            name: '往来管理',
+            child: [
+                {
+                    src: 'img/gonghuo.ico',
+                    title: '供应商管理',
+                    remark: 'Hello',
+                    tag: '供应商关系管理',
+                    module: 'js.supplier'
+                },
+                {
+                    src: 'img/kehuguanli.ico',
+                    title: '客户管理',
+                    remark: 'Hello',
+                    tag: '客户关系管理',
+                    module: 'js.customer'
+                }
+            ]
+        },
+        {
+            name: '商品管理',
+            child: [
+                {
+                    src: 'img/shangpingxinxi.ico',
+                    title: '商品信息',
+                    remark: 'Hello',
+                    tag: 'testTree',
+                    module: 'js.merchandiseInfo'
+                }
+                ,
+                {
+                    src: 'img/shangpingfenglei.ico',
+                    title: '商品类别',
+                    remark: 'Hello',
+                    tag: 'testTree',
+                    module: 'js.merchandiseCInfo'
+                },
+                {
+                    src: 'img/shangpingdanwei.ico',
+                    title: '商品单位',
+                    remark: 'Hello',
+                    tag: 'testTree',
+                    module: 'js.unitinfo'
+                }
+            ]
+        }
+
+
+    ]
+}

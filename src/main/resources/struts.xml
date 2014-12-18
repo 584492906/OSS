@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+    <constant name="struts.i18n.reload" value="false"/>
+    <constant name="struts.devMode" value="true"/>
+    <constant name="struts.custom.i18n.resources" value="globalMessages"/>
+
+    <package name="default" extends="struts-default,json-default" namespace="/">
+        <!--登录-->
+        <action name="login" class="com.shinowit.actions.LoginAction" method="OperLogin">
+            <result type="json">
+                <param name="excludeProperties">.*hibernateLazyInitializer,.*handler</param>
+            </result>
+            <result name="false" type="json">
+                <param name="excludeProperties">.*hibernateLazyInitializer,.*handler</param>
+            </result>
+        </action>
+        <!--跳转-->
+        <action name="jump" class="com.shinowit.actions.JumpAction" method="jump">
+            <result name="success">/WEB-INF/web/main.html</result>
+        </action>
+        <!--当前操作员-->
+        <action name="validOper" class="com.shinowit.actions.CurrentOperAction" method="valid">
+            <result type="json">
+                <param name="excludeProperties">
+                    .*hibernateLazyInitializer,.*handler,.*baLogInfos,.*meInStockInfos,.*meOrderInfos,.*meOutStockInfos,.*auAuthorizations,.*auOperInfos
+                </param>
+            </result>
+        </action>
+        <!--促销状态-->
+        <action name="queryProstatus" class="com.shinowit.actions.ProStatAction" method="queryProStat">
+            <result type="json">
+                <param name="excludeProperties">.*hibernateLazyInitializer,.*handler,.*meMerchandiseInfos</param>
+            </result>
+        </action>
+        <!--操作员列表-->
+        <action name="operStore" class="com.shinowit.actions.Oper.OperStoreAction" method="queryForOper">
+            <result type="json">
+                <param name="excludeProperties">
+                    .*hibernateLazyInitializer,.*handler,.*auRoleInfo,.*baLogInfos,.*meInStockInfos,.*meOrderInfos,.*meOutStockInfos
+                </param>
+            </result>
+        </action>
+        <action name="queryStockInfo" class="com.shinowit.actions.StockForOneAction" method="queryForOne">
+            <result type="json">
+                <param name="excludeProperties">.*handler,.*meInStockDetailsInfos,.*meMerchandiseCInfo,.*meProStatusInfo,.*meUnitInfo,.*meOrderDetailsInfos,.*meOutStockDetailsInfos,.*meStockInfos</param>
+            </result>
+        </action>
+
+    </package>
+
+    <include file="com/shinowit/actions/xml/supplier.xml"></include>
+    <include file="com/shinowit/actions/xml/customer.xml"></include>
+    <include file="com/shinowit/actions/xml/merchandiseCInfo.xml"></include>
+    <include file="com/shinowit/actions/xml/unit.xml"></include>
+    <include file="com/shinowit/actions/xml/merchandiseInfo.xml"></include>
+    <include file="com/shinowit/actions/xml/instock.xml"></include>
+    <include file="com/shinowit/actions/xml/outstock.xml"></include>
+    <include file="com/shinowit/actions/xml/stockinfo.xml"></include>
+    <include file="com/shinowit/actions/xml/operinfo.xml"></include>
+    <include file="com/shinowit/actions/xml/role.xml"></include>
+    <include file="com/shinowit/actions/xml/author.xml"></include>
+    <include file="com/shinowit/actions/xml/menu.xml"></include>
+</struts>

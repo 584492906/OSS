@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+    <constant name="struts.i18n.reload" value="false"/>
+    <constant name="struts.devMode" value="true"/>
+    <constant name="struts.custom.i18n.resources" value="globalMessages"/>
+
+    <package name="merchandiseInfo" extends="struts-default,json-default" namespace="/">
+        <action name="merchandise" class="com.shinowit.actions.merchandiseInfo.MerchandiseInfoAction"
+                method="queryMerchandise">
+            <result type="json">
+                <param name="includeProperties">merchandiseInfo.*</param>
+                <param name="excludeProperties">
+                    .*hibernateLazyInitializer,.*handler,.*meOutStockDetailsInfos,.*meInStockDetailsInfos,.*meOutStockInfo,.*meMerchandiseInfos,.*meOrderDetailsInfos,.*meMerchandiseInfo,.*meStockInfos
+                </param>
+            </result>
+        </action>
+        <action name="AddmerchandiseInfo" class="com.shinowit.actions.merchandiseInfo.AddMerchandiseInfoAction"
+                method="AddMerchadise">
+            <result type="json"></result>
+        </action>
+        <action name="updateMerchandiseInfo" class="com.shinowit.actions.merchandiseInfo.UpdateMerchandiseInfo"
+                method="UpdateMerchandiseInfo">
+            <result type="json"></result>
+        </action>
+        <action name="delMerchandiseInfo" class="com.shinowit.actions.merchandiseInfo.DelMerInfoAction"
+                method="delMerInfo">
+            <result type="json"></result>
+        </action>
+    </package>
+
+
+</struts>

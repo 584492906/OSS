@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+    <constant name="struts.i18n.reload" value="false"/>
+    <constant name="struts.devMode" value="true"/>
+    <constant name="struts.custom.i18n.resources" value="globalMessages"/>
+
+    <package name="stockinfo" extends="struts-default,json-default" namespace="/">
+       <action name="StockInfo" class="com.shinowit.actions.stockinfo.StockInfoAction" method="queryStockInfo">
+           <result type="json">
+               <param name="excludeProperties">.*handler,.*meInStockDetailsInfos,.*meMerchandiseCInfo,.*meProStatusInfo,.*meUnitInfo,.*meOrderDetailsInfos,.*meOutStockDetailsInfos,.*meStockInfos</param>
+           </result>
+       </action>
+        <action name="warningStock" class="com.shinowit.actions.stockinfo.StockWaringActuin" method="warningStock">
+            <result type="json">
+                <param name="excludeProperties">.*meInStockDetailsInfos,.*meMerchandiseCInfo,.*meProStatusInfo,.*meUnitInfo,.*meOrderDetailsInfos,.*meOutStockDetailsInfos,.*meStockInfos,.*remark,.*clickCount,.*picPath,.*describe,.*spec,.*saleStatus,.*price,.*merchandiseAb</param>
+            <!--<param name="includeProperties">stockList\.num,stockList\.meMerchandiseInfo.merchandiseName</param>-->
+            </result>
+        </action>
+    </package>
+
+
+</struts>

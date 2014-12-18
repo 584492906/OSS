@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+    <constant name="struts.i18n.reload" value="false"/>
+    <constant name="struts.devMode" value="true"/>
+    <constant name="struts.custom.i18n.resources" value="globalMessages"/>
+
+    <package name="outstock" extends="struts-default,json-default" namespace="/">
+
+        <action name="outStock" class="com.shinowit.actions.outstock.OutStockInfo" method="insertOutstockinfo">
+            <result type="json"></result>
+        </action>
+        <action name="queryForOutStockInfo" class="com.shinowit.actions.outstock.OutStockInfoAction" method="queryStock">
+            <result type="json">
+                <param name="excludeProperties">.*auOperInfo</param>
+            </result>
+        </action>
+        <action name="OutStockDeInfo" class="com.shinowit.actions.outstock.OutStockDetailAction" method="queryStockDetail">
+            <result type="json">
+                <param name="excludeProperties">.*meInStockDetailsInfos,.*auOperInfo,.*meMerchandiseCInfo,.*meProStatusInfo,.*meUnitInfo,.*meOrderDetailsInfos,.*meOutStockDetailsInfos,.*meStockInfos</param>
+            </result>
+        </action>
+    </package>
+
+
+</struts>

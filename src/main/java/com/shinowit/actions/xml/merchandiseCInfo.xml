@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+    <constant name="struts.i18n.reload" value="false"/>
+    <constant name="struts.devMode" value="true"/>
+    <constant name="struts.custom.i18n.resources" value="globalMessages"/>
+
+    <package name="merchandiseCInfo" extends="struts-default,json-default" namespace="/">
+        <action name="merchandiseCinfo" class="com.shinowit.actions.merchandiseCInfo.MerchandiseAction"
+                method="queryMerchandiseCInfo">
+            <result type="json">
+                <param name="includeProperties">merchandise.*</param>
+                <param name="excludeProperties">.*hibernateLazyInitializer,.*handler,.*meMerchandiseInfos</param>
+            </result>
+        </action>
+        <action name="addMerchandise" class="com.shinowit.actions.merchandiseCInfo.AddMerchandiseAction"
+                method="addMer">
+            <result type="json"></result>
+        </action>
+        <action name="updateMerchandise" class="com.shinowit.actions.merchandiseCInfo.UpMeDiCInfoAction"
+                method="updateMerchandise">
+            <result type="json"></result>
+        </action>
+        <action name="delMerchandise" class="com.shinowit.actions.merchandiseCInfo.DelMerCInfoAction" method="delMer">
+            <result type="json"></result>
+        </action>
+        <action name="queryChart" class="com.shinowit.actions.merchandiseCInfo.ChartAction" method="queryChart">
+            <result type="json"></result>
+        </action>
+    </package>
+
+</struts>

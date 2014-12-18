@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+    <constant name="struts.i18n.reload" value="false"/>
+    <constant name="struts.devMode" value="true"/>
+    <constant name="struts.custom.i18n.resources" value="globalMessages"/>
+
+    <package name="supplier" extends="struts-default,json-default" namespace="/">
+
+        <!--查询供应商信息-->
+        <action name="Supplier" class="com.shinowit.actions.supplier.SupplierAction" method="querySupplier">
+            <result type="json">
+                <param name="includeProperties">supplier.*</param>
+                <param name="excludeProperties">.*hibernateLazyInitializer,.*handler,.*meInStockInfos</param>
+            </result>
+
+        </action>
+        <!--添加供应商-->
+        <action name="addSup" class="com.shinowit.actions.supplier.AddSupAction" method="AddSupplier">
+            <result type="json"></result>
+        </action>
+        <!--修改供应商信息-->
+        <action name="updateSupplier" class="com.shinowit.actions.supplier.UpdateSupplierAction"
+                method="updateSupplier">
+            <result type="json"></result>
+        </action>
+        <!--删除供应商-->
+        <action name="delSupplier" class="com.shinowit.actions.supplier.DelSupplierAction" method="delSupplier">
+            <result type="json"></result>
+
+        </action>
+    </package>
+
+</struts>

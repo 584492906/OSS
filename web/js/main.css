@@ -1,0 +1,75 @@
+.header {
+    background: url(/img/x.gif);
+    height: 80px
+}
+
+.logo {
+    height: 60px;
+    width: 70px;
+    float: left;
+    margin: 5px 10px 5px 10px
+}
+
+.title {
+    float: left;
+    margin-left: 20px;
+    margin-right: 100px;
+}
+
+.back {
+    font-size: 20px;
+    font-weight: bold;
+    color: #252c3b
+}
+
+.wrap {
+    top: 8pt;
+    overflow: hidden;
+}
+
+.color {
+    top: -8pt;
+    color: #ccc;
+    font-size: 40px;
+    font-weight: bold;
+    color: #252c3b
+}
+
+.welcome {
+    height: 35px;
+    width: 190px
+}
+
+.x-panel-header {
+    color: darkslateblue;
+    font-size: 50;
+    text-align: right
+}
+
+.button {
+    width: 127px;
+    height: 30px;
+    background-repeat: no-repeat;
+    text-align: right;
+    background-size: 28px;
+}
+
+.x-toolbar {
+    background: #157fcc
+}
+
+.x-grid-view {
+    background: #ffffff
+}
+
+{
+    background: #157fcc
+}
+.shouye {
+    font-size: 40px;
+    font-weight: bolder
+}
+
+.x-panel-body {
+    background: #157fcc
+}

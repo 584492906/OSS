@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+    <constant name="struts.i18n.reload" value="false"/>
+    <constant name="struts.devMode" value="true"/>
+    <constant name="struts.custom.i18n.resources" value="globalMessages"/>
+
+    <package name="role" extends="struts-default,json-default" namespace="/">
+        <action name="queryRole" class="com.shinowit.actions.role.RoleAction" method="queryRole">
+            <result type="json">
+                <param name="excludeProperties">.*auRoleInfo,.*auOperInfos,.*parentMenu.auAuthorizations,.*menuInfos</param>
+            </result>
+        </action>
+        <action name="roleAll" class="com.shinowit.actions.role.RoleAllAction" method="queryRole">
+            <result type="json">
+                <param name="excludeProperties">.*auAuthorizations,.*auOperInfos</param>
+            </result>
+        </action>
+        <action name="addRole" class="com.shinowit.actions.role.AddRoleAction" method="addRole">
+            <result type="json"></result>
+        </action>
+        <action name="updateRole" class="com.shinowit.actions.role.UpdateRoleAction" method="updateRole">
+            <result type="json"></result>
+        </action>
+        <action name="delRole" class="com.shinowit.actions.role.DelRoleAction" method="delRole">
+            <result type="json"></result>
+        </action>
+    </package>
+
+
+</struts>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+    <constant name="struts.i18n.reload" value="false"/>
+    <constant name="struts.devMode" value="true"/>
+    <constant name="struts.custom.i18n.resources" value="globalMessages"/>
+
+    <package name="unit" extends="struts-default,json-default" namespace="/">
+        <action name="unitinfo" class="com.shinowit.actions.unitinfo.UnitInfoAction" method="queryUnit">
+            <result type="json">
+                <param name="excludeProperties">unit.*.meMerchandiseInfos,unit.*.meOrderDetailsInfos</param>
+            </result>
+        </action>
+        <action name="addUnitInfo" class="com.shinowit.actions.unitinfo.AddUnitInfoAction" method="addUnit">
+            <result type="json"></result>
+        </action>
+        <action name="updateUnitInfo" class="com.shinowit.actions.unitinfo.UpdateUnitAction" method="upUnitInfo">
+            <result type="json"></result>
+        </action>
+        <action name="delUnitInfo" class="com.shinowit.actions.unitinfo.DelUnitAction" method="delUnitInfo">
+            <result type="json"></result>
+        </action>
+    </package>
+
+
+</struts>

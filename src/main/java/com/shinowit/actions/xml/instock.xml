@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+    <constant name="struts.i18n.reload" value="false"/>
+    <constant name="struts.devMode" value="true"/>
+    <constant name="struts.custom.i18n.resources" value="globalMessages"/>
+
+    <package name="instock" extends="struts-default,json-default" namespace="/">
+
+        <action name="insertStock" class="com.shinowit.actions.instock.InStockAction" method="insertStock">
+            <result type="json"></result>
+        </action>
+        <action name="inStockinfo" class="com.shinowit.actions.instock.InStockInfoAction" method="queryInStockInfo">
+            <result type="json">
+                <param name="excludeProperties">.*auOperInfo,.*baSupplierInfo,.*meInStockInfo,.*meMerchandiseInfo,
+                </param>
+            </result>
+        </action>
+        <action name="inStockDetailInfo" class="com.shinowit.actions.instock.InStockDetailInfoAction"
+                method="queryInStockDetailInfo">
+            <result type="json">
+                <param name="excludeProperties">
+                    .*meInStockDetailsInfos,.*auOperInfo,.*baSupplierInfo,.*meMerchandiseCInfo,.*meProStatusInfo,.*meUnitInfo,.*meOrderDetailsInfos,.*meOutStockDetailsInfos,.*meStockInfos
+                </param>
+            </result>
+        </action>
+    </package>
+
+
+</struts>
